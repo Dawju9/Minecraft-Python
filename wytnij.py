@@ -1,14 +1,10 @@
-# Importy
+#---------------------------[Używane  biblioteki]---------------------------------#
 import mcpi.minecraft as minecraft
 import mcpi.block as block
 import time
-
-# Zmienne 
-
-
+#---------------------------[Początek zmiennych]---------------------------------#
 # Zmienna funkcji MCPI - Minecraft.Create() przypisana do zmiennej zwn. "mc"
 mc = minecraft.Minecraft.create()
-
 
 # Zmienna a - to wielkośc boku kwadratu do wyczyszczenia
 a = 35
@@ -23,11 +19,9 @@ sleep = 0.0021
 
 # Zmienna bloku z funcji MCPI - block.'*' bloki dostępne w dokumentacji MCPI
 air = block.AIR
-
-
-
-
+#---------------------------[Koniec  zmiennych]---------------------------------#
 # Mój działający kod właściwy
+
 # Pętla lini A 
 while a >= 0:
  a = a - 1 # Zmiejszam A o 1 z każdą pętlą (A = A + 1)

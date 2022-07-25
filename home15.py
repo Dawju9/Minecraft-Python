@@ -1,16 +1,10 @@
+#---------------------------[Używane  biblioteki]---------------------------------#
 import mcpi.minecraft as minecraft
 import mcpi.block as block
 import time
-hiroszima = "nad bedrock"
+#---------------------------[Początek zmiennych]---------------------------------#
 mc = minecraft.Minecraft.create()
 a = 15
-#
-#
-# while ys <= -3: 
-#  mc.setBlock({x},{ys},{z},{stone})
-#  mc.setBlock({x},{ys},{z},{stone})
-#  ys = ys + 1
-# zmienne 
 x = 0
 y = 0
 za = a
@@ -20,8 +14,7 @@ zok = 2
 yd = -1
 yds = -2
 z = 0
-#sleep = 0.0021
-sleep = 0
+sleep = 0.0021
 grass = block.GRASS
 dirt = block.DIRT
 glass = block.GLASS_PANE
@@ -33,25 +26,19 @@ air = block.AIR
 #  print(f"B aktualnie jest = {b}")
 #  mc.postToChat("   aktualny a    ")
 #  mc.postToChat({b})
+#---------------------------[Początek kodu]---------------------------------#
 while a >= 0:
  a = a - 1
  x = x + 1
- 
- 
  mc.postToChat("")
  mc.postToChat("")
  mc.postToChat("")
  mc.setBlock({x},{y},{z},{grass})
- #mc.postToChat("stawiam dirt")
- #mc.player.setPos({xok},{yok},{zok}, 68)
- #mc.setBlock({x},{yd},{z},{dirt})
- #mc.setBlock({x},{yds},{z},{stone})
  time.sleep(sleep)
  while a == 0:
   x = 0
   z = z + 1
   a = za
-  #yds = yds - 1
  while z == za:
   print(f" skonczyłem budowac")
   mc.postToChat("skonczyłem budowac podstawę")
@@ -65,7 +52,7 @@ while a >= 0:
    for ia in range(0, a):
     for iaa in range(1, azzz):
      mc.setBlock({iaa},{iaaa},{ia},{dirt})
-     #time.sleep(0.0000002)
+     time.sleep(0.0000002)
     #stone
   iaaa = -2
   azzz = a +1 
@@ -74,7 +61,7 @@ while a >= 0:
    for ia in range(0, a):
     for iaa in range(1, azzz):
      mc.setBlock({iaa},{iaaa},{ia},{stone})
-     #time.sleep(0.0000002)
+     time.sleep(0.0000002)
   
   for i in range(1, 7):
    mc.setBlock(4,{i},3,{wood})
@@ -133,11 +120,17 @@ while a >= 0:
    for izz in range(2, 6):
     mc.setBlock({iz},{izz},9,{glass})
     time.sleep(sleep)  
-  #mc.setBlock(2,2,8,{stst})
   time.sleep(0)
   exit()
   
   
+#
+# #mc.setBlock(2,2,8,{stst})
+# while ys <= -3: 
+#  mc.setBlock({x},{ys},{z},{stone})
+#  mc.setBlock({x},{ys},{z},{stone})
+#  ys = ys + 1
+# zmienne 
       #restart od zera
   #iaaa = 10
  # azzz = a + 1 

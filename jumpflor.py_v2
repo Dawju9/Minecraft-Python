@@ -1,0 +1,57 @@
+# Importowanie potrzebnych bibliotek
+import mcpi.minecraft as minecraft
+import mcpi.block as block
+import time
+
+# Tworzenie obiektu Minecraft
+mc = minecraft.Minecraft.create()
+
+# Początkowe zmienne
+a = 1
+sleep = 0.3021
+sleepbr = 0.621
+x = 0
+y = 0
+z = 0
+
+# Bloki z biblioteki MCPI
+glass = block.GLASS
+air = block.AIR
+
+# Pętla główna
+while True:
+    for j in range(0, 7):
+        mc.setBlock(x + j * 4, y, z, glass)
+    
+    mc.postToChat("punkt")
+    mc.postToChat(a)
+    
+    x += 28  # Zamiast inkrementować x o 4 punkty, inkrementuj go o 28 punktów
+    a += 1
+    
+    if a == 40:
+        mc.postToChat("Wygrałeś, zaczynamy od początku")
+        time.sleep(20)
+        a = 0
+        x = 0
+        y = 0
+        z = 0
+
+    if not dwie:
+        mc.setBlock(x, y, z, glass)
+        x += 4
+        mc.setBlock(x, y, z, glass)
+        time.sleep(sleep)
+        dwie = True
+        continue
+
+    if dwie:
+        time.sleep(sleepbr)
+        x -= 8
+        mc.setBlock(x, y, z, air)
+        x -= 4
+        mc.setBlock(x, y, z, air)
+        time.sleep(sleep)
+        dwie = False
+        x += 4
+        continue

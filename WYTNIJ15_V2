@@ -1,0 +1,34 @@
+#---------------------------[Używane biblioteki]---------------------------------#
+import mcpi.minecraft as minecraft
+import mcpi.block as block
+import time
+
+#---------------------------[Początek zmiennych]---------------------------------#
+# Zmienna funkcji MCPI - Minecraft.create() przypisana do zmiennej zwanej "mc"
+mc = minecraft.Minecraft.create()
+
+# Zmienna a - to wielkość boku kwadratu do wyczyszczenia
+a = 35
+
+# Zmienna koordynatów (x, y, z) do przesunięcia początku koordynatów programu od WordSpawn'a (/setwordspawn - by zmienić początek koordynatów)
+x = 0
+y = 0
+z = 0
+
+# Zmienna prędkości usuwania bloków (a dokładniej funkcja czasu dla programu w Pythonie)
+sleep = 0.0021
+
+# Zmienna bloku z funkcji MCPI - block.'*' bloki dostępne w dokumentacji MCPI
+air = block.AIR
+
+#---------------------------[Koniec zmiennych]---------------------------------#
+
+# Mój działający kod właściwy
+while a >= 0:
+    a = a - 1  # Zmniejszam A o 1 w każdej iteracji (A = A - 1)
+    y = a + 1  # Przyrównuje Y do A zwiększając go o 1 punkt w każdej iteracji (Y = A + 1)
+    for ia in range(0, 60):  # W zakresie od 0 do 59 wartości X
+        for iaa in range(1, 60):  # W zakresie od 1 do 59 wartości Z
+            mc.setBlock(x + ia, y, z + iaa, air)  # Usuwam blok, zamieniając obecny na powietrze
+    if y == a:  # Jeżeli Y osiągnie wartość A
+        break  # Kończę pętlę
